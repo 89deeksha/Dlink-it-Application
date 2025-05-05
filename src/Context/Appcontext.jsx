@@ -5,9 +5,10 @@ export const AppContext=createContext() //Appcontext is like component which is 
 
 export const AppContextProvider=({children})=>{ //children is to get all components
     const navigate=useNavigate()
-    const [user, setUser]=useState(null)
+    const [user, setUser]=useState(true)
     const [isSeller, setSeller]=useState(false)
-    const value={navigate,user,setSeller,setUser,isSeller}
+    const [showuserlogin,setShowuserlogin]=useState(false)
+    const value={navigate,user,setSeller,setUser,isSeller,showuserlogin,setShowuserlogin}
     return <AppContext.Provider value={value}>
         {children}
     </AppContext.Provider>
